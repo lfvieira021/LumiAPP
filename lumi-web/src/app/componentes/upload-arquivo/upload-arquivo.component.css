@@ -1,0 +1,25 @@
+.container {
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+    flex-direction: column;
+    width: 25%;
+}
+
+.container-form-field{
+    margin-top: 2em;
+    font-size: 10px;
+}
+
+.texto-arquivo {
+    font-size: 15px;
+}
+
+.btns-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex: 1;
+    gap: 10px;
+    width: 100%;
+}

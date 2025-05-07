@@ -1,0 +1,10 @@
+.container{
+    display: flex;
+    justify-content: space-between;
+    flex: 1;
+}
+
+.header-actions span{
+    font-weight: 300;
+    font-size: 15px;
+}

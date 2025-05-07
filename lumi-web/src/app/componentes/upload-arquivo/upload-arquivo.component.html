@@ -1,0 +1,19 @@
+<div class="container">
+    <mat-form-field class="container-form-field" appearance="outline">
+        <input class="texto-arquivo" placeholder="Arquivo" type="text" [value]="nomeArquivo" disabled matInput />
+        <input type="file" hidden (change)="uploadArquivo($event)" #fileInput />
+
+        <input type="text" matInput />
+    </mat-form-field>
+    <div class="btns-container">
+        <button mat-raised-button class="rounded" color="primary" (click)="fileInput.click()">
+            <mat-icon style="font-size: 20px;">upload</mat-icon>
+            Selecionar Audio
+        </button>
+
+        <button mat-raised-button class="rounded" color="primary" (click)="transcreverArquivo()">
+            <mat-icon style="font-size: 20px;">upload</mat-icon>
+            Transcrever
+        </button>
+    </div>
+</div>
