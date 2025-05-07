@@ -1,4 +1,4 @@
-import { HTTP_INTERCEPTORS, HttpEvent, HttpHandler, HttpInterceptor, HttpRequest } from "@angular/common/http";
+import { HttpEvent, HttpHandler, HttpInterceptor, HttpRequest } from "@angular/common/http";
 import { Observable } from "rxjs";
 import { SpinnerService } from "../services/spinner.service";
 import { Injectable } from "@angular/core";
@@ -13,7 +13,6 @@ export class LoadingInterceptor implements HttpInterceptor {
     intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
         this.spinnerService.show();
 
-        //Envia a requisição para o BE 
         return next.handle(req).pipe(
             finalize(() => this.spinnerService.hide())
         );
