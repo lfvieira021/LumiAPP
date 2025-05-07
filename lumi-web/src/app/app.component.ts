@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { SpinnerService } from './services/spinner.service';
 
 @Component({
@@ -9,6 +9,23 @@ import { SpinnerService } from './services/spinner.service';
 export class AppComponent {
   title = 'lumi-web';
 
-  constructor(private spinnerService: SpinnerService) {}
+  constructor(private spinnerService: SpinnerService) { }
   spinner$ = this.spinnerService.spinner$;
+
+  @HostListener('mousemove', ['$event'])
+  onMouseMove(event: MouseEvent): void {
+    const circle = document.createElement('div');
+    circle.classList.add('circle');
+    document.body.appendChild(circle);
+
+    const x = event.clientX;
+    const y = event.clientY;
+
+    circle.style.left = `${x - 25}px`; // Centraliza o círculo no cursor
+    circle.style.top = `${y - 25}px`;
+
+    setTimeout(() => {
+      circle.remove();
+    }, 1500);
+  }
 }
